@@ -28,5 +28,5 @@ jupyter notebook
 <br>
 Andrii Koval
 <br>
-Andrian Hryn
+Adrian Hryn
 </small>
