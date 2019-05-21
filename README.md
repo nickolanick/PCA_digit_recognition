@@ -19,10 +19,7 @@ npm i
 python3 main.py
 ```
 
-<h3>Team:</h3>
-<small>Mykola Biliaiev
-<br>
-Andrii Koval
-<br>
-Adrian Hryn
-</small>
+
+*   Andrii Koval
+*   Adrian Hryn
+*   Mykola Biliaiev
