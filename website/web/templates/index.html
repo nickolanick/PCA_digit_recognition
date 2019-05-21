@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<main>
+    <div class="image-upload">
+        <h1 class="image-upload__header">Matrix Detection </h1>
+        <div class="image-upload__image">
+            <img src="{{ url_for('static', filename='img/no-foto.png') }}"
+                 id="image_inserted"
+                 alt="">
+        </div>
+
+        <div class="image-upload__buttons">
+            <input type="file" id="matrix_image_insert">
+            <button id="uploadFile">Send photo</button>
+        </div>
+
+    </div>
+
+
+    <div class="results_block">
+
+    </div>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='dist/bundle.js') }}"></script>
+
+<!--<script src="../dist/bundle.js"></script>-->
+</body>
+</html>

@@ -24,19 +24,17 @@ class DigitDetection:
 
         # Threshold the image
         ret, im_th = cv2.threshold(im_gray, 90, 255, cv2.THRESH_BINARY_INV)
-        cv2.imshow("show", im_th)
         # Find contours in the image
         ctrs, hier = cv2.findContours(im_th.copy(), cv2.RETR_EXTERNAL,
                                       cv2.CHAIN_APPROX_SIMPLE)
 
         return ctrs, im, im_th
 
-    def get_rectangles(self, image="matrix_perfect_4x4.jpeg", is_src=True):
-        ctrs, im, im_th = self._get_ctrs(image,is_src)
+    def get_rectangles(self, image, is_src=True):
+        ctrs, im, im_th = self._get_ctrs(image, is_src)
         # Get rectangles contains each contour
         rects = [cv2.boundingRect(ctr) for ctr in ctrs]
         rects = sorted(rects, key=lambda x: x[1], reverse=False)
-        print(rects, "RECTS")
         rects_blocks = [rects[slice(i, i + 4, 1)] for i in
                         range(0, len(rects), 4)]
 
@@ -67,7 +65,8 @@ class DigitDetection:
         cv2.rectangle(im, (x_start, y_start),
                       (farthest_right_x, farthest_down_y), (255, 255, 0),
                       3)
-
+        matrix_coordinates = {"x": x_start, "y": y_start,
+                              "ln1": farthest_right_x, "ln2": farthest_down_y}
         digits = []
         for rect in rects:
             # Draw the rectangles
@@ -92,13 +91,8 @@ class DigitDetection:
             digits.append(str(int(nbr[0])))
             cv2.putText(im, str(int(nbr[0])), (rect[0], rect[1]),
                         cv2.FONT_HERSHEY_DUPLEX, 2, (0, 255, 255), 3)
-
-        cv2.imshow("Resulting Image with Rectangular ROIs", im)
-
-        cv2.waitKey()
-        return digits
-
-
-if __name__ == '__main__':
-    digit_recogn = DigitDetection("digits_cls2.pkl")
-    print(digit_recogn.get_rectangles())
+        #
+        # cv2.imshow("Resulting Image with Rectangular ROIs", im)
+        #
+        # cv2.waitKey()
+        return digits, im.tolist()
