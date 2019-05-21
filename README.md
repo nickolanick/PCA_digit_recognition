@@ -3,27 +3,20 @@
 ## Installation
 to run digit recognition
 ```bash
-	python3 -m venv my_env
+python3 -m venv my_env
+source my_env/bin/activate
+pip3 install -r requirements.txt
+cd digit_recognition
+jupyter notebook
 ```
-
-```bash
-	source my_env/bin/activate
-```
-```bash
-	pip3 install -r requirements.txt
-```
-```bash
-	jupyter notebook
-```
-
 To run flask application
 ```bash
-    python3 -m venv my_env
-	source my_env/bin/activate
-    pip3 install -r requirements.txt
-    cd website/web
-    npm i
-    python3 main.py
+python3 -m venv my_env
+source my_env/bin/activate
+pip3 install -r requirements.txt
+cd website/web
+npm i
+python3 main.py
 ```
 
 <h3>Team:</h3>
