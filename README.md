@@ -1,27 +1,23 @@
 # PCA_digit_recognition
 
-<h2>steps:</h2>
-<b>
-<ol>
-
-<li>
+## Installation
+to run digit recognition
+```bash
 	python3 -m venv my_env
-</li>
-
-<li>
 	source my_env/bin/activate
-</li>
-<li>
-pip3 install -r requirements.txt
-</li>
-<li>
-jupyter notebook
-</li>
-
-
-</ol>
-</b>
-
+    pip3 install -r requirements.txt
+    cd digit_recognition
+    jupyter notebook
+```
+To run flask application
+```bash
+    python3 -m venv my_env
+	source my_env/bin/activate
+    pip3 install -r requirements.txt
+    cd website/web
+    npm i
+    python3 main.py
+```
 
 <h3>Team:</h3>
 <small>Mykola Biliaiev
